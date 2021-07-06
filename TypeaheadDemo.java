@@ -2,7 +2,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Trie {
+
+/*
+Typeahead also known as auto-complete search. 
+For this, we need to use Trie data structure.
+Trie stores the all words in tree structure manner. 
+So that it will be easy to seach words.
+
+List datastructure to store the results.
+
+*/
+
+class Typeahead {
 
 	private class Node {
 
@@ -80,6 +91,28 @@ public class Trie {
 
 		for (Node child : root.getChildren())
 			findWords(child, prefix + child.value, words);
+	}
+
+}
+
+public class TypeaheadDemo {
+
+	public static void main(String[] args) {
+
+		Trie trie = new Trie();
+		
+		trie.insert("catch");
+		trie.insert("cat");
+		trie.insert("can");
+		trie.insert("hello");
+		trie.insert("bell");
+		trie.insert("call");
+		trie.insert("dell");
+		trie.insert("celo");
+		trie.insert("ccalling");
+		
+		System.out.println(trie.autoCompletion("ca").toString());
+		
 	}
 
 }
